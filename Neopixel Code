@@ -1,0 +1,23 @@
+This code sets up the Neopixel to run from pin 1 and causes it to flash between to colours in order to create a blinking effect.
+
+#include <Adafruit_NeoPixel.h>
+
+#define PIN 1
+Adafruit_NeoPixel myNeopixel = Adafruit_NeoPixel(1, PIN, NEO_GRB);
+
+
+void setup()
+{
+  myNeopixel.begin();
+  myNeopixel.show();
+}
+
+void loop()
+{
+  myNeopixel.setPixelColor(0,0,0,255);
+  myNeopixel.show();
+  delay(300);
+  myNeopixel.setPixelColor(0,0,255,0);
+  myNeopixel.show();
+  delay(300);
+}
