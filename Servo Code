@@ -1,0 +1,28 @@
+This code sets up the servo to run from pin 9, causing it to rotate from 180 degrees to 0 degrees continuously.
+
+#include <Servo.h>
+int servo = 9;
+int servoLocation1 = 180;
+int servoLocation2 = 0;
+Servo myservo;
+
+void setup() {
+Serial.begin(9600);
+myservo.attach(servo);
+}
+
+void loop() {
+myservo.write(servoLocation1);
+delay(100);
+myservo.write(servoLocation2);
+delay(100);
+myservo.write(servoLocation1);
+delay(100);
+myservo.write(servoLocation2);
+delay(100);
+myservo.write(servoLocation1);
+delay(100);
+myservo.write(servoLocation2);
+
+
+}
